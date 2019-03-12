@@ -18,5 +18,5 @@ class SignalTestPipeline(object):
     def process_item(self, item, spider):
         proxy = item['proxy']
         if not self.db.zscore('proxies', proxy):
-            self.db.zadd('proxies', 100, proxy)
+            self.db.zadd('proxies', 10, proxy)
         return item
